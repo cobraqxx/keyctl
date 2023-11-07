@@ -21,6 +21,7 @@ type Keyring interface {
 	Add(string, []byte) (*Key, error)
 	Search(string) (*Key, error)
 	SetDefaultTimeout(uint)
+	AttachPersistent() (Keyring, error)
 }
 
 // Named keyrings are user-created keyrings linked to a parent keyring. The
@@ -91,6 +92,13 @@ func (kr *keyring) Search(name string) (*Key, error) {
 		return &Key{Name: name, id: id, ring: kr.id}, nil
 	}
 	return nil, err
+}
+
+// AttachPersistent attaches the current executing context's persistent
+// keyring to this keyring. See persistent-keyring(7) for more info.
+// It returns either an error, or the persistent Keyring.
+func (kr *keyring) AttachPersistent() (Keyring, error) {
+	return attachPersistent(kr.id)
 }
 
 // Return the current login session keyring
