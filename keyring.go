@@ -20,6 +20,7 @@ type Keyring interface {
 	Id
 	Add(string, []byte) (*Key, error)
 	Search(string) (*Key, error)
+	SearchType(string, string) (*Key, error)
 	SetDefaultTimeout(uint)
 	AttachPersistent() (Keyring, error)
 }
@@ -87,7 +88,11 @@ func (kr *keyring) Add(name string, key []byte) (*Key, error) {
 // one. The key, if found, is linked to the top keyring that Search() was called
 // from.
 func (kr *keyring) Search(name string) (*Key, error) {
-	id, err := searchKeyring(kr.id, name, "user")
+	return kr.SearchType(name, "user")
+}
+
+func (kr *keyring) SearchType(name string, keyType string) (*Key, error) {
+	id, err := searchKeyring(kr.id, name, keyType)
 	if err == nil {
 		return &Key{Name: name, id: id, ring: kr.id}, nil
 	}
