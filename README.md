@@ -1,4 +1,4 @@
-[![GoDoc](https://godoc.org/github.com/jsipprell/keyctl?status.svg)](https://godoc.org/github.com/jsipprell/keyctl)
+[![GoDoc](https://godoc.org/github.com/cobraqxx/keyctl?status.svg)](https://godoc.org/github.com/cobraqxx/keyctl)
 [![Build Status](https://travis-ci.org/jsipprell/keyctl.svg?branch=master)](https://travis-ci.org/jsipprell/keyctl)
 
 # keyctl
@@ -21,7 +21,7 @@ package main
    
 import (
   "log"
-  "github.com/jsipprell/keyctl"
+  "github.com/cobraqxx/keyctl"
 )
     
 func main() {
@@ -48,7 +48,7 @@ package main
 
 import (
   "log"
-  "github.com/jsipprell/keyctl"
+  "github.com/cobraqxx/keyctl"
 )
 
 func main() {

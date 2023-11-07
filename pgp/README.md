@@ -1,4 +1,4 @@
-[![GoDoc](https://godoc.org/github.com/jsipprell/keyctl/pgp?status.svg)](https://godoc.org/github.com/jsipprell/keyctl/pgp)
+[![GoDoc](https://godoc.org/github.com/cobraqxx/keyctl/pgp?status.svg)](https://godoc.org/github.com/cobraqxx/keyctl/pgp)
 
 # keyctl/pgp
 
@@ -23,8 +23,8 @@ import (
   "io"
   "log"
   "golang.org/x/crypto/openpgp"
-  "github.com/jsipprell/keyctl"
-  "github.com/jsipprell/keyctl/pgp"
+  "github.com/cobraqxx/keyctl"
+  "github.com/cobraqxx/keyctl/pgp"
 )
 
 func decryptReader(r io.Reader, pgpKeyring openpgp.KeyRing) {
