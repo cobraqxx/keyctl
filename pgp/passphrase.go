@@ -14,7 +14,7 @@ package pgp
 import (
 	"io"
 
-	"github.com/jsipprell/keyctl"
+	"github.com/cobraqxx/keyctl"
 	"golang.org/x/crypto/openpgp"
 	"golang.org/x/crypto/openpgp/packet"
 )
